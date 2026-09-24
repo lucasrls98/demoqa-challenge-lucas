@@ -5,7 +5,7 @@ describe('Browser dialogs', () => {
     alertsPage.visit();
   });
 
-  it('clicks the alert button → alert shows the expected message', () => {
+  it('clicks the alert button → alert shows the expected message', { tags: '@smoke' }, () => {
     cy.on('window:alert', cy.stub().as('alert'));
 
     alertsPage.click('alertButton');

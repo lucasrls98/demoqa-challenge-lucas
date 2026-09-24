@@ -7,7 +7,7 @@ describe('Web Tables', () => {
     webTables.rows().should('have.length', 3);
   });
 
-  it('adds a record → new row shows every submitted value', function () {
+  it('adds a record → new row shows every submitted value', { tags: '@smoke' }, function () {
     webTables.addRecord(this.data.newRecord);
 
     cy.get(webTables.selectors.modal).should('not.exist');

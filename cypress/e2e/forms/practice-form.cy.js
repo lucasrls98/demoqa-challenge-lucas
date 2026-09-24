@@ -8,30 +8,37 @@ describe('Practice Form', () => {
     practiceForm.visit();
   });
 
-  it('submits every field → confirmation lists all submitted data', function () {
-    const student = this.students.complete;
+  it(
+    'submits every field → confirmation lists all submitted data',
+    { tags: '@smoke' },
+    function () {
+      const student = this.students.complete;
 
-    practiceForm.fill(student).submit();
+      practiceForm.fill(student).submit();
 
-    practiceForm.confirmationModal().should('be.visible');
-    cy.get(practiceForm.selectors.modalTitle).should('have.text', 'Thanks for submitting the form');
-    practiceForm
-      .submittedValue('Student Name')
-      .should('have.text', `${student.firstName} ${student.lastName}`);
-    practiceForm.submittedValue('Student Email').should('have.text', student.email);
-    practiceForm.submittedValue('Gender').should('have.text', student.gender);
-    practiceForm.submittedValue('Mobile').should('have.text', student.mobile);
-    practiceForm
-      .submittedValue('Date of Birth')
-      .should('have.text', formatSubmittedDate(student.dateOfBirth));
-    practiceForm.submittedValue('Subjects').should('have.text', student.subjects.join(', '));
-    practiceForm.submittedValue('Hobbies').should('have.text', student.hobbies.join(', '));
-    practiceForm.submittedValue('Picture').should('have.text', 'avatar.png');
-    practiceForm.submittedValue('Address').should('have.text', student.address);
-    practiceForm
-      .submittedValue('State and City')
-      .should('have.text', `${student.state} ${student.city}`);
-  });
+      practiceForm.confirmationModal().should('be.visible');
+      cy.get(practiceForm.selectors.modalTitle).should(
+        'have.text',
+        'Thanks for submitting the form',
+      );
+      practiceForm
+        .submittedValue('Student Name')
+        .should('have.text', `${student.firstName} ${student.lastName}`);
+      practiceForm.submittedValue('Student Email').should('have.text', student.email);
+      practiceForm.submittedValue('Gender').should('have.text', student.gender);
+      practiceForm.submittedValue('Mobile').should('have.text', student.mobile);
+      practiceForm
+        .submittedValue('Date of Birth')
+        .should('have.text', formatSubmittedDate(student.dateOfBirth));
+      practiceForm.submittedValue('Subjects').should('have.text', student.subjects.join(', '));
+      practiceForm.submittedValue('Hobbies').should('have.text', student.hobbies.join(', '));
+      practiceForm.submittedValue('Picture').should('have.text', 'avatar.png');
+      practiceForm.submittedValue('Address').should('have.text', student.address);
+      practiceForm
+        .submittedValue('State and City')
+        .should('have.text', `${student.state} ${student.city}`);
+    },
+  );
 
   it('submits only required fields → confirmation shows required data and blank optionals', function () {
     const student = this.students.requiredOnly;

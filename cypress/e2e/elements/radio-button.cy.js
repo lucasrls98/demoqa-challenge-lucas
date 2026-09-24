@@ -6,12 +6,16 @@ describe('Radio buttons', () => {
   });
 
   ['Yes', 'Impressive'].forEach((label) => {
-    it(`chooses "${label}" → option is checked and confirmed on the page`, () => {
-      radioButton.choose(label);
+    it(
+      `chooses "${label}" → option is checked and confirmed on the page`,
+      { tags: '@smoke' },
+      () => {
+        radioButton.choose(label);
 
-      radioButton.input(label).should('be.checked');
-      radioButton.result().should('have.text', label);
-    });
+        radioButton.input(label).should('be.checked');
+        radioButton.result().should('have.text', label);
+      },
+    );
   });
 
   it('switches between options → only the latest choice stays selected', () => {

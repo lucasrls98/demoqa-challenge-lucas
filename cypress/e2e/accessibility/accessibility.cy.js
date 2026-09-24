@@ -1,7 +1,7 @@
 import modalDialogs from '../../pages/ModalDialogsPage';
 import { sharedLayoutViolations, pages } from '../../fixtures/a11y-pages.json';
 
-describe('Accessibility', () => {
+describe('Accessibility', { tags: '@a11y' }, () => {
   pages.forEach(({ name, path, knownViolations }) => {
     it(`scans ${name} → no serious or critical violations beyond the tracked baseline`, () => {
       cy.visit(path);

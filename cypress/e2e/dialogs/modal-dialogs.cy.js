@@ -7,16 +7,20 @@ describe('Modal dialogs', () => {
   });
 
   modals.forEach(({ size, title, body }) => {
-    it(`opens and closes the ${size} modal → content is shown, then dismissed`, () => {
-      modalDialogs.open(size);
+    it(
+      `opens and closes the ${size} modal → content is shown, then dismissed`,
+      { tags: '@smoke' },
+      () => {
+        modalDialogs.open(size);
 
-      modalDialogs.dialog().should('be.visible').and('have.attr', 'aria-modal', 'true');
-      modalDialogs.title(size).should('have.text', title);
-      modalDialogs.body().should('contain', body);
+        modalDialogs.dialog().should('be.visible').and('have.attr', 'aria-modal', 'true');
+        modalDialogs.title(size).should('have.text', title);
+        modalDialogs.body().should('contain', body);
 
-      modalDialogs.close(size);
+        modalDialogs.close(size);
 
-      modalDialogs.dialog().should('not.exist');
-    });
+        modalDialogs.dialog().should('not.exist');
+      },
+    );
   });
 });

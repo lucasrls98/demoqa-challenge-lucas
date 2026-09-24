@@ -11,7 +11,7 @@ describe('Select menus', () => {
     selectMenu.field('groupedSelect').should('contain', 'Group 2, option 1');
   });
 
-  it('picks a title → selection replaces the placeholder', () => {
+  it('picks a title → selection replaces the placeholder', { tags: '@smoke' }, () => {
     selectMenu.field('titleSelect').should('contain', 'Select Title');
 
     selectMenu.chooseReactOption('titleInput', 'Dr.');
