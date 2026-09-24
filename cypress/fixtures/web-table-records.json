@@ -1,0 +1,11 @@
+{
+  "newRecord": {
+    "firstName": "Grace",
+    "lastName": "Hopper",
+    "email": "grace.hopper@example.com",
+    "age": 45,
+    "salary": 15000,
+    "department": "Engineering"
+  },
+  "existingEmail": "alden@example.com"
+}
