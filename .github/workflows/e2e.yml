@@ -1,0 +1,56 @@
+name: E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+        env:
+          CYPRESS_INSTALL_BINARY: 0
+      - run: npm run lint
+      - run: npm run format:check
+
+  e2e:
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+      - name: Run Cypress suite
+        uses: cypress-io/github-action@v7.4.4
+        with:
+          browser: chrome
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cypress-report
+          path: cypress/reports
+          if-no-files-found: ignore
+      - name: Upload failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
