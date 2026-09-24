@@ -8,5 +8,9 @@
   "engines": {
     "node": ">=20"
   },
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "cypress": "^16.1.0",
+    "cypress-mochawesome-reporter": "^5.0.0"
+  }
 }
