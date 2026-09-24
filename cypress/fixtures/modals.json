@@ -1,0 +1,12 @@
+[
+  {
+    "size": "small",
+    "title": "Small Modal",
+    "body": "This is a small modal. It has very less content"
+  },
+  {
+    "size": "large",
+    "title": "Large Modal",
+    "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  }
+]
