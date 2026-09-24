@@ -1,6 +1,6 @@
 # DemoQA · Cypress E2E Suite
 
-[![E2E](https://github.com/lucasrls98/demoqa-cypress-challenge/actions/workflows/e2e.yml/badge.svg)](https://github.com/lucasrls98/demoqa-cypress-challenge/actions/workflows/e2e.yml)
+[![E2E](https://github.com/lucasrls98/demoqa-challenge-lucas/actions/workflows/e2e.yml/badge.svg)](https://github.com/lucasrls98/demoqa-challenge-lucas/actions/workflows/e2e.yml)
 
 Automated end-to-end tests for [demoqa.com](https://demoqa.com), covering forms, tables, selections, dialogs, and accessibility.
 
@@ -15,8 +15,8 @@ See [REPORT.md](REPORT.md), [DEFECTS.md](DEFECTS.md), and [RECOMMENDATIONS.md](R
 ## Install
 
 ```bash
-git clone https://github.com/lucasrls98/demoqa-cypress-challenge.git
-cd demoqa-cypress-challenge
+git clone https://github.com/lucasrls98/demoqa-challenge-lucas.git
+cd demoqa-challenge-lucas
 npm ci
 ```
 
