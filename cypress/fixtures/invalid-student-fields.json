@@ -1,0 +1,6 @@
+[
+  { "field": "mobile", "value": "12345", "reason": "fewer than 10 digits" },
+  { "field": "mobile", "value": "12345abcde", "reason": "non-numeric characters" },
+  { "field": "email", "value": "ada.example.com", "reason": "missing @ symbol" },
+  { "field": "email", "value": "ada@example", "reason": "missing top-level domain" }
+]

@@ -1,0 +1,22 @@
+{
+  "complete": {
+    "firstName": "Ada",
+    "lastName": "Lovelace",
+    "email": "ada.lovelace@example.com",
+    "gender": "Female",
+    "mobile": "9876543210",
+    "dateOfBirth": { "day": 10, "month": 12, "year": 1995 },
+    "subjects": ["Maths", "Computer Science"],
+    "hobbies": ["Reading", "Music"],
+    "picture": "files/avatar.png",
+    "address": "12 Analytical Engine Street, London",
+    "state": "NCR",
+    "city": "Delhi"
+  },
+  "requiredOnly": {
+    "firstName": "Alan",
+    "lastName": "Turing",
+    "gender": "Male",
+    "mobile": "0123456789"
+  }
+}
