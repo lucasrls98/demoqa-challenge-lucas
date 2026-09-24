@@ -1,0 +1,23 @@
+{
+  "sharedLayoutViolations": ["image-alt", "link-name"],
+  "pages": [
+    {
+      "name": "Practice Form",
+      "path": "/automation-practice-form",
+      "knownViolations": ["label", "label-title-only"]
+    },
+    {
+      "name": "Web Tables",
+      "path": "/webtables",
+      "knownViolations": ["button-name", "select-name"]
+    },
+    { "name": "Alerts", "path": "/alerts", "knownViolations": [] },
+    { "name": "Modal Dialogs", "path": "/modal-dialogs", "knownViolations": [] },
+    { "name": "Radio Button", "path": "/radio-button", "knownViolations": [] },
+    {
+      "name": "Select Menu",
+      "path": "/select-menu",
+      "knownViolations": ["label", "label-title-only", "select-name"]
+    }
+  ]
+}
