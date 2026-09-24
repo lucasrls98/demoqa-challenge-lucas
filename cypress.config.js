@@ -36,11 +36,16 @@ module.exports = defineConfig({
     '*.casalemedia.com',
     '*.adnxs.com',
   ],
+  expose: {
+    grepFilterSpecs: true,
+    grepOmitFiltered: true,
+  },
   e2e: {
     baseUrl: 'https://demoqa.com',
     specPattern: 'cypress/e2e/**/*.cy.js',
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
+      require('@cypress/grep/plugin').plugin(config);
       on('task', {
         table(rows) {
           console.table(rows);

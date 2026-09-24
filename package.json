@@ -10,6 +10,8 @@
   },
   "scripts": {
     "test": "cypress run",
+    "test:smoke": "cypress run --expose grepTags=@smoke",
+    "test:a11y": "cypress run --expose grepTags=@a11y",
     "test:headed": "cypress run --headed --browser chrome",
     "test:chrome": "cypress run --browser chrome",
     "cy:open": "cypress open",
@@ -19,6 +21,7 @@
     "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@cypress/grep": "^7.0.0",
     "@eslint/js": "^10.0.1",
     "axe-core": "^4.13.0",
     "cypress": "^16.1.0",
