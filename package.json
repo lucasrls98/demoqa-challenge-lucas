@@ -1,0 +1,12 @@
+{
+  "name": "demoqa-cypress-challenge",
+  "version": "1.0.0",
+  "description": "Cypress end-to-end test suite for demoqa.com",
+  "private": true,
+  "author": "lucasrls98",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {}
+}
