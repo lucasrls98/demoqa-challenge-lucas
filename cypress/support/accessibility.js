@@ -28,8 +28,18 @@ Cypress.Commands.add(
           cy.log(`**a11y** ${impact}: ${id} (${nodes.length} nodes)`),
         );
 
+        const details = unexpected.flatMap(({ id, nodes }) =>
+          nodes.map(({ target, failureSummary }) => ({
+            rule: id,
+            target: target.join(' '),
+            failure: failureSummary,
+          })),
+        );
+        if (details.length) cy.task('table', details, { log: false });
+
         cy.then(() => {
-          expect(summarize(unexpected), 'unexpected accessibility violations').to.be.empty;
+          const message = details.map(({ rule, target }) => `${rule} → ${target}`).join('; ');
+          expect(unexpected, `unexpected accessibility violations: ${message}`).to.be.empty;
         });
       });
   },
