@@ -1,5 +1,8 @@
 const DEFAULT_IMPACTS = ['serious', 'critical'];
 
+const FREEZE_MOTION_CSS =
+  '*, *::before, *::after { transition: none !important; animation: none !important; }';
+
 const summarize = (violations) =>
   violations.map(({ id, impact, help, nodes }) => ({
     rule: id,
@@ -17,6 +20,14 @@ Cypress.Commands.add('injectAxe', () => {
 Cypress.Commands.add(
   'checkAccessibility',
   (context = 'body', { impacts = DEFAULT_IMPACTS, knownViolations = [] } = {}) => {
+    cy.document({ log: false }).then((doc) => {
+      const style = doc.createElement('style');
+      style.textContent = FREEZE_MOTION_CSS;
+      doc.head.appendChild(style);
+    });
+    cy.document({ log: false }).should((doc) => {
+      expect(doc.getAnimations(), 'running animations').to.be.empty;
+    });
     cy.window({ log: false })
       .then((win) => win.axe.run(win.document.querySelector(context)))
       .then(({ violations }) => {
