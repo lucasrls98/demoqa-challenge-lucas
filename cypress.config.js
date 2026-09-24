@@ -4,6 +4,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'cypress/reports',
+    reportTitle: 'DemoQA E2E Results',
     reportPageTitle: 'DemoQA E2E Results',
     charts: true,
     embeddedScreenshots: true,
