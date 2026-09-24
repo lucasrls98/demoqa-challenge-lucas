@@ -9,12 +9,11 @@
     "node": "^22.0.0 || ^24.0.0 || >=26.0.0"
   },
   "scripts": {
-    "test": "cypress run",
-    "test:smoke": "cypress run --expose grepTags=@smoke",
-    "test:a11y": "cypress run --expose grepTags=@a11y",
-    "test:headed": "cypress run --headed --browser chrome",
-    "test:chrome": "cypress run --browser chrome",
-    "cy:open": "cypress open",
+    "test": "cypress run --browser chrome",
+    "test:smoke": "cypress run --browser chrome --expose grepTags=@smoke",
+    "test:a11y": "cypress run --browser chrome --expose grepTags=@a11y",
+    "test:headed": "cypress run --browser chrome --headed",
+    "cy:open": "cypress open --e2e --browser chrome",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
