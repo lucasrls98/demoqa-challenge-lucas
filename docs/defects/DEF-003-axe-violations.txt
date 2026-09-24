@@ -1,0 +1,54 @@
+axe-core 4.13.0 · serious + critical impacts · scope #root · Chrome 153 headless
+Each table lists the violations found on the page named in the line below it.
+
+┌─────────┬────────────────────┬────────────┬─────────────────────────────────────────────┬───────┐
+│ (index) │ rule               │ impact     │ help                                        │ nodes │
+├─────────┼────────────────────┼────────────┼─────────────────────────────────────────────┼───────┤
+│ 0       │ 'image-alt'        │ 'critical' │ 'Images must have alternative text'         │ 1     │
+│ 1       │ 'label-title-only' │ 'serious'  │ 'Form elements should have a visible label' │ 2     │
+│ 2       │ 'label'            │ 'critical' │ 'Form elements must have labels'            │ 4     │
+│ 3       │ 'link-name'        │ 'serious'  │ 'Links must have discernible text'          │ 1     │
+└─────────┴────────────────────┴────────────┴─────────────────────────────────────────────┴───────┘
+    √ scans Practice Form → no serious or critical violations beyond the tracked baseline
+┌─────────┬───────────────┬────────────┬───────────────────────────────────────────────┬───────┐
+│ (index) │ rule          │ impact     │ help                                          │ nodes │
+├─────────┼───────────────┼────────────┼───────────────────────────────────────────────┼───────┤
+│ 0       │ 'button-name' │ 'critical' │ 'Buttons must have discernible text'          │ 1     │
+│ 1       │ 'image-alt'   │ 'critical' │ 'Images must have alternative text'           │ 1     │
+│ 2       │ 'link-name'   │ 'serious'  │ 'Links must have discernible text'            │ 1     │
+│ 3       │ 'select-name' │ 'critical' │ 'Select element must have an accessible name' │ 1     │
+└─────────┴───────────────┴────────────┴───────────────────────────────────────────────┴───────┘
+    √ scans Web Tables → no serious or critical violations beyond the tracked baseline
+┌─────────┬─────────────┬────────────┬─────────────────────────────────────┬───────┐
+│ (index) │ rule        │ impact     │ help                                │ nodes │
+├─────────┼─────────────┼────────────┼─────────────────────────────────────┼───────┤
+│ 0       │ 'image-alt' │ 'critical' │ 'Images must have alternative text' │ 1     │
+│ 1       │ 'link-name' │ 'serious'  │ 'Links must have discernible text'  │ 1     │
+└─────────┴─────────────┴────────────┴─────────────────────────────────────┴───────┘
+    √ scans Alerts → no serious or critical violations beyond the tracked baseline
+┌─────────┬─────────────┬────────────┬─────────────────────────────────────┬───────┐
+│ (index) │ rule        │ impact     │ help                                │ nodes │
+├─────────┼─────────────┼────────────┼─────────────────────────────────────┼───────┤
+│ 0       │ 'image-alt' │ 'critical' │ 'Images must have alternative text' │ 1     │
+│ 1       │ 'link-name' │ 'serious'  │ 'Links must have discernible text'  │ 1     │
+└─────────┴─────────────┴────────────┴─────────────────────────────────────┴───────┘
+    √ scans Modal Dialogs → no serious or critical violations beyond the tracked baseline
+┌─────────┬─────────────┬────────────┬─────────────────────────────────────┬───────┐
+│ (index) │ rule        │ impact     │ help                                │ nodes │
+├─────────┼─────────────┼────────────┼─────────────────────────────────────┼───────┤
+│ 0       │ 'image-alt' │ 'critical' │ 'Images must have alternative text' │ 1     │
+│ 1       │ 'link-name' │ 'serious'  │ 'Links must have discernible text'  │ 1     │
+└─────────┴─────────────┴────────────┴─────────────────────────────────────┴───────┘
+    √ scans Radio Button → no serious or critical violations beyond the tracked baseline
+┌─────────┬────────────────────┬────────────┬───────────────────────────────────────────────┬───────┐
+│ (index) │ rule               │ impact     │ help                                          │ nodes │
+├─────────┼────────────────────┼────────────┼───────────────────────────────────────────────┼───────┤
+│ 0       │ 'image-alt'        │ 'critical' │ 'Images must have alternative text'           │ 1     │
+│ 1       │ 'label-title-only' │ 'serious'  │ 'Form elements should have a visible label'   │ 3     │
+│ 2       │ 'label'            │ 'critical' │ 'Form elements must have labels'              │ 3     │
+│ 3       │ 'link-name'        │ 'serious'  │ 'Links must have discernible text'            │ 1     │
+│ 4       │ 'select-name'      │ 'critical' │ 'Select element must have an accessible name' │ 2     │
+└─────────┴────────────────────┴────────────┴───────────────────────────────────────────────┴───────┘
+    √ scans Select Menu → no serious or critical violations beyond the tracked baseline
+    √ opens a modal dialog → dialog content has no serious or critical violations
+────────────────────────────────────────────────────────────────────────────────────────────────────

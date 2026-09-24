@@ -1,0 +1,2 @@
+Uncaught TypeError: Lr.findDOMNode is not a function
+    at onClick (https://demoqa.com/assets/index-D_rDx8ml.js:36:57250)
