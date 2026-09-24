@@ -6,7 +6,7 @@
   "author": "lucasrls98",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": "^22.0.0 || ^24.0.0 || >=26.0.0"
   },
   "scripts": {
     "test": "cypress run",
